@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char nomes[10][50];
+    int codigos[10];
+    float precos[10];
+    int i;
+
+    for(i = 0; i < 10; i++) {
+        printf("Nome do produto %d: ", i+1);
+        scanf(" %[^\n]", nomes[i]);
+        printf("Código do produto: ");
+        scanf("%d", &codigos[i]);
+        printf("Preço do produto: ");
+        scanf("%f", &precos[i]);
+    }
+
+    printf("\nProdutos com aumento:\n");
+    for(i = 0; i < 10; i++) {
+        float novoPreco = precos[i];
+        if(codigos[i] % 2 == 0 && precos[i] > 1000) novoPreco *= 1.2;
+        else if(codigos[i] % 2 == 0) novoPreco *= 1.15;
+        else if(precos[i] > 1000) novoPreco *= 1.10;
+        else continue;
+
+        printf("%s | Código: %d | Preço antigo: %.2f | Novo preço: %.2f\n", nomes[i], codigos[i], precos[i], novoPreco);
+    }
+
+    return 0;
+}

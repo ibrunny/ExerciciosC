@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int logica[15], prog[10], i, j;
+
+    printf("Digite as 15 matrículas de alunos em Lógica:\n");
+    for(i = 0; i < 15; i++)
+        scanf("%d", &logica[i]);
+
+    printf("Digite as 10 matrículas de alunos em Linguagem de Programação:\n");
+    for(i = 0; i < 10; i++)
+        scanf("%d", &prog[i]);
+
+    printf("Alunos cursando as duas disciplinas: ");
+    for(i = 0; i < 15; i++)
+        for(j = 0; j < 10; j++)
+            if(logica[i] == prog[j])
+                printf("%d ", logica[i]);
+
+    printf("\n");
+    return 0;
+}

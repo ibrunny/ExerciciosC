@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float vetor[10], somaPositivos = 0;
+    int negativos = 0, i;
+
+    printf("Digite 10 números reais:\n");
+    for(i = 0; i < 10; i++)
+        scanf("%f", &vetor[i]);
+
+    for(i = 0; i < 10; i++) {
+        if(vetor[i] < 0) negativos++;
+        else somaPositivos += vetor[i];
+    }
+
+    printf("Quantidade de negativos: %d\n", negativos);
+    printf("Soma dos positivos: %.2f\n", somaPositivos);
+
+    return 0;
+}

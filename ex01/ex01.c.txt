@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[6];
+    int i, pares = 0, impares = 0;
+
+    printf("Digite 6 números inteiros:\n");
+    for(i = 0; i < 6; i++)
+        scanf("%d", &vetor[i]);
+
+    printf("Números pares: ");
+    for(i = 0; i < 6; i++)
+        if(vetor[i] % 2 == 0) {
+            printf("%d ", vetor[i]);
+            pares++;
+        }
+
+    printf("\nQuantidade de pares: %d\n", pares);
+
+    printf("Números ímpares: ");
+    for(i = 0; i < 6; i++)
+        if(vetor[i] % 2 != 0) {
+            printf("%d ", vetor[i]);
+            impares++;
+        }
+
+    printf("\nQuantidade de ímpares: %d\n", impares);
+
+    return 0;
+}

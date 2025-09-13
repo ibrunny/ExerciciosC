@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int codigos[10], estoque[10], i;
+    int codCliente, codProduto, qtd;
+
+    // Preenchendo produtos
+    for(i = 0; i < 10; i++) {
+        printf("Digite o código do produto %d: ", i+1);
+        scanf("%d", &codigos[i]);
+        printf("Digite a quantidade em estoque: ");
+        scanf("%d", &estoque[i]);
+    }
+
+    while(1) {
+        printf("\nDigite o código do cliente (0 para sair): ");
+        scanf("%d", &codCliente);
+        if(codCliente == 0) break;
+
+        printf("Digite o código do produto desejado: ");
+        scanf("%d", &codProduto);
+        printf("Digite a quantidade desejada: ");
+        scanf("%d", &qtd);
+
+        int existe = 0;
+        for(i = 0; i < 10; i++) {
+            if(codigos[i] == codProduto) {
+                existe = 1;
+                if(estoque[i] >= qtd) {
+                    estoque[i] -= qtd;
+                    printf("Pedido atendido. Obrigado e volte sempre.\n");
+                } else {
+                    printf("Não temos estoque suficiente dessa mercadoria.\n");
+                }
+                break;
+            }
+        }
+        if(!existe) printf("Código inexistente.\n");
+    }
+
+    printf("\nEstoque atualizado:\n");
+    for(i = 0; i < 10; i++)
+        printf("Produto %d: %d unidades\n", codigos[i], estoque[i]);
+
+    return 0;
+}

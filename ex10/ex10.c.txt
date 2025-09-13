@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int v1[10], v2[5], res1[10], res2[10], i, j;
+
+    printf("Digite 10 números do primeiro vetor:\n");
+    for(i = 0; i < 10; i++) scanf("%d", &v1[i]);
+
+    printf("Digite 5 números do segundo vetor:\n");
+    for(i = 0; i < 5; i++) scanf("%d", &v2[i]);
+
+    for(i = 0; i < 10; i++) {
+        if(v1[i] % 2 == 0) {
+            int soma = v1[i];
+            for(j = 0; j < 5; j++) soma += v2[j];
+            res1[i] = soma;
+        } else {
+            int divisores = 0;
+            for(j = 0; j < 5; j++)
+                if(v1[i] % v2[j] == 0) divisores++;
+            res2[i] = divisores;
+        }
+    }
+
+    printf("Primeiro vetor resultante (pares): ");
+    for(i = 0; i < 10; i++)
+        if(v1[i] % 2 == 0) printf("%d ", res1[i]);
+    printf("\n");
+
+    printf("Segundo vetor resultante (ímpares): ");
+    for(i = 0; i < 10; i++)
+        if(v1[i] % 2 != 0) printf("%d ", res2[i]);
+    printf("\n");
+
+    return 0;
+}

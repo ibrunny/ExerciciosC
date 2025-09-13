@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[15], i;
+
+    printf("Digite 15 números inteiros:\n");
+    for(i = 0; i < 15; i++)
+        scanf("%d", &vetor[i]);
+
+    printf("Posições com valor 30: ");
+    for(i = 0; i < 15; i++)
+        if(vetor[i] == 30)
+            printf("%d ", i);
+
+    printf("\n");
+    return 0;
+}
