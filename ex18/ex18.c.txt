@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int A[3][8], B[3][8], soma[3][8], dif[3][8];
+    int i,j;
+
+    printf("Digite os elementos da matriz A:\n");
+    for(i=0;i<3;i++)
+        for(j=0;j<8;j++)
+            scanf("%d",&A[i][j]);
+
+    printf("Digite os elementos da matriz B:\n");
+    for(i=0;i<3;i++)
+        for(j=0;j<8;j++)
+            scanf("%d",&B[i][j]);
+
+    for(i=0;i<3;i++){
+        for(j=0;j<8;j++){
+            soma[i][j] = A[i][j]+B[i][j];
+            dif[i][j] = A[i][j]-B[i][j];
+        }
+    }
+
+    printf("\nSoma das matrizes:\n");
+    for(i=0;i<

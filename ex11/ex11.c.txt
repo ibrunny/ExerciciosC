@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int mat[3][5], i, j, count = 0;
+
+    printf("Digite os elementos da matriz 3x5:\n");
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 5; j++){
+            scanf("%d", &mat[i][j]);
+            if(mat[i][j] >= 15 && mat[i][j] <= 20){
+                count++;
+            }
+        }
+    }
+
+    printf("Quantidade de elementos entre 15 e 20: %d\n", count);
+    return 0;
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    float vendas[12][4];
+    float totalMes, totalSemana[4] = {0}, totalAno = 0;
+    char *meses[12] = {"Janeiro","Fevereiro","Marco","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"};
+    int i, j;
+
+    printf("Digite as vendas (12 meses x 4 semanas):\n");
+    for(i = 0; i < 12; i++){
+        totalMes = 0;
+        for(j = 0; j < 4; j++){
+            scanf("%f", &vendas[i][j]);
+            totalMes += vendas[i][j];
+            totalSemana[j] += vendas[i][j];
+            totalAno += vendas[i][j];
+        }
+        printf("Total vendido em %s: %.2f\n", meses[i], totalMes);
+    }
+
+    for(j = 0; j < 4; j++){
+        printf("Total vendido na semana %d durante o ano: %.2f\n", j+1, totalSemana[j]);
+    }
+
+    printf("Total vendido no ano: %.2f\n", totalAno);
+    return 0;
+}

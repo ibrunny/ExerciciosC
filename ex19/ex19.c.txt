@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float mat[3][3], num;
+    int i,j;
+
+    printf("Digite os elementos da matriz 3x3:\n");
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            scanf("%f",&mat[i][j]);
+
+    printf("Digite o numero para multiplicar: ");
+    scanf("%f",&num);
+
+    printf("\nMatriz resultante:\n");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            printf("%.2f ", mat[i][j]*num);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

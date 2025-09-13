@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int mat[6][3], i, j;
+    int maior, menor, linMaior, colMaior, linMenor, colMenor;
+
+    printf("Digite os elementos da matriz 6x3:\n");
+    for(i = 0; i < 6; i++){
+        for(j = 0; j < 3; j++){
+            scanf("%d", &mat[i][j]);
+            if(i == 0 && j == 0){
+                maior = menor = mat[i][j];
+                linMaior = linMenor = i;
+                colMaior = colMenor = j;
+            } else {
+                if(mat[i][j] > maior){
+                    maior = mat[i][j];
+                    linMaior = i; colMaior = j;
+                }
+                if(mat[i][j] < menor){
+                    menor = mat[i][j];
+                    linMenor = i; colMenor = j;
+                }
+            }
+        }
+    }
+
+    printf("Maior elemento: %d na posicao (%d,%d)\n", maior, linMaior, colMaior);
+    printf("Menor elemento: %d na posicao (%d,%d)\n", menor, linMenor, colMenor);
+    return 0;
+}

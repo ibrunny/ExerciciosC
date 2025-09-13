@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int mat[2][4], i, j, countLinha, somaPares = 0, countPares = 0;
+
+    printf("Digite os elementos da matriz 2x4:\n");
+    for(i = 0; i < 2; i++){
+        countLinha = 0;
+        for(j = 0; j < 4; j++){
+            scanf("%d", &mat[i][j]);
+            if(mat[i][j] >= 12 && mat[i][j] <= 20){
+                countLinha++;
+            }
+            if(mat[i][j] % 2 == 0){
+                somaPares += mat[i][j];
+                countPares++;
+            }
+        }
+        printf("Linha %d: %d elementos entre 12 e 20\n", i+1, countLinha);
+    }
+
+    if(countPares > 0){
+        printf("Media dos elementos pares: %.2f\n", (float)somaPares/countPares);
+    } else {
+        printf("Nao ha elementos pares.\n");
+    }
+
+    return 0;
+}

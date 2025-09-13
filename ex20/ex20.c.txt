@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int mat[5][5], i,j;
+    int somaLinha4=0, somaCol2=0, somaDiagPrin=0, somaDiagSec=0, somaTotal=0;
+
+    printf("Digite os elementos da matriz 5x5:\n");
+    for(i=0;i<5;i++){
+        for(j=0;j<5;j++){
+            scanf("%d",&mat[i][j]);
+            if(i==3) somaLinha4 += mat[i][j];
+            if(j==1) somaCol2 += mat[i][j];
+            if(i==j) somaDiagPrin += mat[i][j];
+            if(i+j==4) somaDiagSec += mat[i][j];
+            somaTotal += mat[i][j];
+        }
+    }
+
+    printf("Soma da linha 4: %d\n", somaLinha4);
+    printf("Soma da coluna 2: %d\n", somaCol2);
+    printf("Soma da diagonal principal: %d\n", somaDiagPrin);
+    printf("Soma da diagonal secundaria: %d\n", somaDiagSec);
+    printf("Soma de todos os elementos: %d\n", somaTotal);
+
+    return 0;
+}

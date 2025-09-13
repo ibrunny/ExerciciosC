@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    char nomes[15][50];
+    float notas[15][5], media[15];
+    int i, j;
+    float mediaClasse = 0;
+
+    for(i = 0; i < 15; i++){
+        printf("Digite o nome do aluno %d: ", i+1);
+        scanf(" %[^\n]", nomes[i]);
+        float soma = 0;
+        for(j = 0; j < 5; j++){
+            printf("Digite a nota %d: ", j+1);
+            scanf("%f", &notas[i][j]);
+            soma += notas[i][j];
+        }
+        media[i] = soma / 5;
+        mediaClasse += media[i];
+    }
+
+    mediaClasse /= 15;
+
+    printf("\nRelatorio:\n");
+    for(i = 0; i < 15; i++){
+        printf("%s - Media: %.2f - Situacao: ", nomes[i], media[i]);
+        if(media[i] >= 7) printf("Aprovado\n");
+        else if(media[i] >= 5) printf("Exame\n");
+        else printf("Reprovado\n");
+    }
+    printf("Media da classe: %.2f\n", mediaClasse);
+    return 0;
+}
